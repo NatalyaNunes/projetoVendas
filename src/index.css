@@ -19,6 +19,10 @@ a{
   color: black; 
 }
 
+table a:hover{
+color: #529fdd;
+}
+
 /*Style Sidebar*/
 
 .sidebar{
@@ -51,7 +55,8 @@ a{
 
 /*Style tabela*/
 table{
-  
+  width: 100%;
+  border-collapse: collapse;
 }
 
 td, th{
@@ -97,6 +102,10 @@ input{
   border-radius: 8px;
   text-align: center;
   place-self: center;
+}
+
+.but:hover{
+  background-color: #163147;
 }
 
 /*Estilo padrão para evitar repetição*/
