@@ -1,18 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import SideBar from './components/SideBar';
-import Cadastro from './components/forms/Cadastro';
-import Table from './components/Table';
-import Login from './components/Login';
+import logo from "./logo.svg";
+import "./App.css";
+import SideBar from "./components/SideBar";
+import Cadastro from "./components/forms/Cadastro";
+import Table from "./components/Table";
+import Login from "./components/Login";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      
-    <Login/>
-
-      
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Login/>}/>
+          <Route path="/home" element={<Table/>}/>
+          <Route path="/cadastro" element={<Cadastro/>}/>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -45,7 +45,7 @@ function Table() {
             </td>
             <td>
               <a href="#">
-                <i>
+                <i class="lixeira">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -96,7 +96,7 @@ function Table() {
             </td>
             <td>
               <a href="#">
-                <i>
+                <i class="lixeira">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

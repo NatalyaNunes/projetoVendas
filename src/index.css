@@ -142,6 +142,10 @@ table tr:hover td {
   width: 20%;
 }
 
+.lixeira:hover{
+  color: var(--pj-red);
+}
+
 /*padrões*/
 
 .bg-ligth {

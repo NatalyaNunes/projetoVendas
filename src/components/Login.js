@@ -1,17 +1,36 @@
 // src/components/Login.js
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { login } from "../redux/user/actions";
+import { useNavigate } from "react-router-dom";
 
-const Login = ({ login, error }) => {
+const Login = ({ login, isAuthenticated, error }) => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const navigate = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
     login({ email, senha });
   };
+
+  //redirecionar após logar
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/home");
+    }
+  }, [isAuthenticated, navigate]);
+
+  //limpar os campo ao digitar errado ou não preencher os campos
+
+  useEffect(() => {
+    if (error) {
+      setEmail("");
+      setSenha("");
+    }
+  }, [error]);
 
   return (
     <main class="home">
@@ -55,7 +74,12 @@ const Login = ({ login, error }) => {
 };
 
 const mapStateToProps = (state) => ({
+  isAuthenticated: state.user.isAuthenticated,
   error: state.user.error,
 });
 
-export default connect(mapStateToProps, { login })(Login);
+const mapDispatchToProps = {
+  login,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
