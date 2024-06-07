@@ -1,30 +1,43 @@
-function Login() {
+// src/components/Login.js
+
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { login } from '../redux/user/actions';
+
+const Login = ({ login, error }) => {
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        login({ email, senha });
+    };
+
     return (
-        <main class="home">
-            <div class="left">
-                <h3 class="mb">Cadastrar venda</h3>
-            </div>           
-            <div class="right forms login">
-                <h3 class="mb">Cadastrar venda</h3>
-                <form action="#">
-                <div class="cardinput mt">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" placeholder="email.exemplo@gmail.com"/>
-                </div>
-                <div class="cardinput mt">
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" placeholder="Senha"/>
-                </div>
+        <div>
+          <h2>Login</h2>
+          {error && <p>{error}</p>}
+          <form onSubmit={onSubmit}>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Senha"
+              value={senha}
+              onChange={e => setSenha(e.target.value)}
+            />
+            <button type="submit">Login</button>
+          </form>
+        </div>
+    );
+};
 
-                <div class="cardinput mt">
-                    <a class="but" href="#">Entrar</a>
-                </div>
+const mapStateToProps = (state) => ({
+  error: state.user.error,
+});
 
-            </form>
-            </div>
-            
-        </main>
-    )
-}
-
-export default Login 
+export default connect(mapStateToProps, { login })(Login);
