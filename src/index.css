@@ -150,14 +150,15 @@ table tr:hover td {
 /*Sidebar*/
 
 .sidebar {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100%; 
-  width: 200px; 
-  background-color: var(--pj-blue); 
-  padding: 20px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  width: 200px;
+  height: 100%;
+  background-color: #265073;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
 .sidebar nav {
@@ -189,7 +190,6 @@ table tr:hover td {
 .butsidebar p {
   margin: 0;
 }
-
 
 /*padrões*/
 
@@ -251,11 +251,11 @@ table tr:hover td {
     cursor: pointer;
     z-index: 1000;
     font-size: 24px;
-    color: var(--pj-ligth);
+    color: var(--pj-ligth)!important;
   }
 
   .menu-toggle.closed {
-    color: var(--pj-blue); /* Cor azul quando o sidebar está fechado */
+    color: var(--pj-blue)!important; /* Cor azul quando o sidebar está fechado */
   }
 
   .main-content {
@@ -274,4 +274,14 @@ table tr:hover td {
   .main-content {
     margin-left: 200px;
   }
+}
+
+/*Centralizar todo o conteúdo que use o Layout*/
+
+.div-centralizada {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0; 
 }

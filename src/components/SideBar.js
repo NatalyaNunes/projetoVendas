@@ -1,6 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SideBar = ({ isOpen }) => {
+  const navigate = useNavigate();
+
+  const handlerVendasClick = () => {
+    navigate("/vendas");
+  };
+
+  const handlerHomeClick = () => {
+    navigate("/home");
+  };
+
+
   return (
     <main>
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
@@ -9,7 +21,7 @@ const SideBar = ({ isOpen }) => {
         </nav>
         <hr />
         <div className="mt">
-          <a href="#">
+          <a onClick={handlerHomeClick}>
             <div className="butsidebar">
               <i>
                 <svg
@@ -31,7 +43,7 @@ const SideBar = ({ isOpen }) => {
               <p>Home</p>
             </div>
           </a>
-          <a href="#">
+          <a onClick={handlerVendasClick}>
             <div className="butsidebar">
               <i>
                 <svg
@@ -55,7 +67,7 @@ const SideBar = ({ isOpen }) => {
             </div>
           </a>
 
-          <a href="#">
+          <a>
             <div className="butsidebar">
               <i>
                 <svg

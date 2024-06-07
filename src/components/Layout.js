@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex"}}>
       <div
         class={`menu-toggle ${sidebarOpen ? "open" : "closed"}`}
         onClick={toggleSidebar}
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
         </i>
       </div>
       <SideBar isOpen={sidebarOpen} />
-      <div class="main-content mt">{children}</div>
+      <div class="main-content mt div-centralizada">{children}</div>
     </div>
   );
 };
