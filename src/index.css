@@ -61,10 +61,10 @@ a {
   background-color: var(--pj-ligth);
   padding: 2rem;
   border-radius: 8px;
-
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
+  
 }
 
 /*style inputs*/
@@ -84,6 +84,7 @@ a {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: var(--pj-ligth);
   margin-top: 0.25rem; /* Para dar um pequeno espaço entre o input e o label */
 }
 
@@ -227,4 +228,50 @@ table tr:hover td {
 
 .mr {
   margin-right: 1rem;
+}
+
+/* Media para telas menores que 768px */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed; 
+    width: 200px; 
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 24px;
+    color: var(--pj-ligth);
+  }
+
+  .menu-toggle.closed {
+    color: var(--pj-blue); /* Cor azul quando o sidebar está fechado */
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+  }
+}
+
+/* Media query para telas maiores que 768px */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 200px;
+  }
 }

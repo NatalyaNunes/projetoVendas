@@ -1,5 +1,9 @@
+import React from "react";
+import Layout from "../Layout";
+
 function Cadastro() {
   return (
+    <Layout>
     <main class="forms">
       <div>
         <h3 class="mb">Cadastrar venda</h3>
@@ -25,7 +29,7 @@ function Cadastro() {
         </div>
       </form>
     </main>
+    </Layout>
   );
 }
-
 export default Cadastro;

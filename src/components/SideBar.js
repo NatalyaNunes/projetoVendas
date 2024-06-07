@@ -1,14 +1,16 @@
-function SideBar() {
+import React from 'react';
+
+const SideBar = ({ isOpen }) => {
   return (
     <main>
-      <div class="sidebar">
-        <nav class="mb">
-          <h2 class="text-ligth">VendUp</h2>
+      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <nav className="mb">
+          <h2 className="text-ligth">VendUp</h2>
         </nav>
-        <hr/>
-        <div class="mt">
+        <hr />
+        <div className="mt">
           <a href="#">
-            <div class="butsidebar">
+            <div className="butsidebar">
               <i>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +22,7 @@ function SideBar() {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="feather feather-home"
+                  className="feather feather-home"
                 >
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -30,7 +32,7 @@ function SideBar() {
             </div>
           </a>
           <a href="#">
-            <div class="butsidebar">
+            <div className="butsidebar">
               <i>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +44,7 @@ function SideBar() {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="feather feather-archive"
+                  className="feather feather-archive"
                 >
                   <polyline points="21 8 21 21 3 21 3 8"></polyline>
                   <rect x="1" y="3" width="22" height="5"></rect>
@@ -54,7 +56,7 @@ function SideBar() {
           </a>
 
           <a href="#">
-            <div class="butsidebar">
+            <div className="butsidebar">
               <i>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +68,7 @@ function SideBar() {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="feather feather-user"
+                  className="feather feather-user"
                 >
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                   <circle cx="12" cy="7" r="4"></circle>
@@ -79,6 +81,6 @@ function SideBar() {
       </div>
     </main>
   );
-}
+};
 
 export default SideBar;
