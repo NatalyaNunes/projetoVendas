@@ -1,7 +1,7 @@
 :root {
   --pj-blue: #265073;
-  --pj-ciano: #2D9596;
-  --pj-green: #9AD0C2;
+  --pj-ciano: #2d9596;
+  --pj-green: #9ad0c2;
   --pj-ligth: #f1f6f8;
   --pj-red: #a00202;
 }
@@ -12,12 +12,13 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   font-family: Arial, sans-serif;
 }
 
-a{
+a {
   text-decoration: none;
   color: #000000;
 }
@@ -29,7 +30,8 @@ a{
   height: 100vh;
 }
 
-.left, .right {
+.left,
+.right {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -49,7 +51,7 @@ a{
 
 /*página main*/
 
-.crud{
+.crud {
   margin: 1rem;
 }
 
@@ -62,7 +64,7 @@ a{
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px; 
+  max-width: 400px;
 }
 
 /*style inputs*/
@@ -85,7 +87,7 @@ a{
   margin-top: 0.25rem; /* Para dar um pequeno espaço entre o input e o label */
 }
 
-.cardinput input:hover{
+.cardinput input:hover {
   border: 1px solid var(--pj-blue);
 }
 
@@ -116,17 +118,18 @@ table {
   border-radius: 1rem;
 }
 
-table a:hover{
-  color:var(--pj-ciano);
+table a:hover {
+  color: var(--pj-ciano);
 }
 
-thead{
+thead {
   background-color: var(--pj-blue);
   padding: 10px;
   color: var(--pj-ligth);
 }
 
-table td, th{
+table td,
+th {
   border: 1px solid #ddd;
   padding: 10px;
 }
@@ -135,29 +138,29 @@ table tr:hover td {
   background-color: #cecbcb67;
 }
 
-.crud button{
+.crud button {
   width: 20%;
 }
 
 /*padrões*/
 
-.bg-ligth{
+.bg-ligth {
   background-color: var(--pj-ligth);
 }
 
-.text-ligth{
+.text-ligth {
   color: var(--pj-ligth);
 }
 
-.text-blue{
+.text-blue {
   color: var(--pj-blue) !important;
 }
 
-.text-red{
+.text-red {
   color: var(--pj-red) !important;
 }
 
-.text-opaco{
+.text-opaco {
   color: rgba(255, 255, 255, 0.5);
   font-size: 3rem;
 }
