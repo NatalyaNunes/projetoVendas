@@ -21,7 +21,6 @@ const Login = ({ login, error }) => {
          <div class="right">
           <div class="forms text-blue">
               <h2>Login</h2>
-              {error && <p>{error}</p>}
               <form onSubmit={onSubmit}>
                 <div class="text-blue cardinput mt">
                   <label for="email">Email</label>
@@ -45,7 +44,8 @@ const Login = ({ login, error }) => {
                 </div>
                 
                 <button class="but mt" type="submit">Login</button>
-              </form>
+                {error && <p class="mt text-red">{error}</p>}
+                </form>
           </div>
           
         </div>

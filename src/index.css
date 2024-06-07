@@ -3,6 +3,7 @@
   --pj-ciano: #2D9596;
   --pj-green: #9AD0C2;
   --pj-ligth: #f1f6f8;
+  --pj-red: #a00202;
 }
 
 * {
@@ -14,6 +15,11 @@
 body, html {
   height: 100%;
   font-family: Arial, sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: #000000;
 }
 
 /*página inicial*/
@@ -41,13 +47,19 @@ body, html {
   align-items: center;
 }
 
+/*página main*/
+
+.crud{
+  margin: 1rem;
+}
+
 /*style forms*/
 
 .forms {
   background-color: var(--pj-ligth);
   padding: 2rem;
   border-radius: 8px;
-  color: var(--pj-blue);
+
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px; 
@@ -96,6 +108,37 @@ body, html {
   background-color: #163147;
 }
 
+/*Style table*/
+
+table {
+  width: 75%;
+  border-collapse: collapse;
+  border-radius: 1rem;
+}
+
+table a:hover{
+  color:var(--pj-ciano);
+}
+
+thead{
+  background-color: var(--pj-blue);
+  padding: 10px;
+  color: var(--pj-ligth);
+}
+
+table td, th{
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+table tr:hover td {
+  background-color: #cecbcb67;
+}
+
+.crud button{
+  width: 20%;
+}
+
 /*padrões*/
 
 .bg-ligth{
@@ -108,6 +151,10 @@ body, html {
 
 .text-blue{
   color: var(--pj-blue) !important;
+}
+
+.text-red{
+  color: var(--pj-red) !important;
 }
 
 .text-opaco{
