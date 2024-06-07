@@ -2,7 +2,7 @@
   --pj-blue: #265073;
   --pj-ciano: #2D9596;
   --pj-green: #9AD0C2;
-  --pj-ligth: #e7f1f5;
+  --pj-ligth: #f1f6f8;
 }
 
 * {
@@ -44,7 +44,7 @@ body, html {
 /*style forms*/
 
 .forms {
-  background-color: white;
+  background-color: var(--pj-ligth);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

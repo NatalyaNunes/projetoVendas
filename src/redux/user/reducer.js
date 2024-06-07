@@ -29,7 +29,7 @@ const userReducer = (state = initialState, action) => {
                     ...state,
                     CurrentUser: action.payload,
                     isAuthenticated: true,
-                    error:'Logado!',
+                    error:'',
                 };
         case LOGIN_FAILURE:
                 return{

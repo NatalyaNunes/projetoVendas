@@ -14,25 +14,43 @@ const Login = ({ login, error }) => {
     };
 
     return (
-        <div>
-          <h2>Login</h2>
-          {error && <p>{error}</p>}
-          <form onSubmit={onSubmit}>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Senha"
-              value={senha}
-              onChange={e => setSenha(e.target.value)}
-            />
-            <button type="submit">Login</button>
-          </form>
+      <main class="home">
+        <div class="left">
+          <span class="text-opaco">VendUp</span>
         </div>
+         <div class="right">
+          <div class="forms">
+              <h2>Login</h2>
+              {error && <p>{error}</p>}
+              <form onSubmit={onSubmit}>
+                <div class="cardinput mt">
+                  <label for="email">Email</label>
+                    <input
+                      type="email"
+                      class="bg-ligth"
+                      placeholder="email.exemplo@gmail.com"
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
+                    />
+                </div>
+                <div class="cardinput mt">
+                  <label for="senha">Senha</label>
+                  <input
+                    type="password"
+                    class="bg-ligth"
+                    placeholder="Senha"
+                    value={senha}
+                    onChange={e => setSenha(e.target.value)}
+                  /> 
+                </div>
+                
+                <button class="but mt" type="submit">Login</button>
+              </form>
+          </div>
+          
+        </div>
+      </main>
+       
     );
 };
 
