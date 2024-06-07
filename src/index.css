@@ -146,6 +146,50 @@ table tr:hover td {
   color: var(--pj-red);
 }
 
+/*Sidebar*/
+
+.sidebar {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  height: 100%; 
+  width: 200px; 
+  background-color: var(--pj-blue); 
+  padding: 20px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.sidebar nav {
+  margin-bottom: 20px; 
+}
+
+.sidebar a {
+  text-decoration: none; 
+  color: var(--pj-ligth);
+}
+
+.butsidebar {
+  display: flex; 
+  align-items: center; 
+  margin-bottom: 10px; 
+  padding: 0.5rem;
+}
+
+.butsidebar:hover{
+  background-color: var(--pj-ligth)!important;
+  color: var(--pj-blue);
+  border-radius: 8px;
+}
+
+.butsidebar i {
+  margin-right: 10px; 
+}
+
+.butsidebar p {
+  margin: 0;
+}
+
+
 /*padrões*/
 
 .bg-ligth {

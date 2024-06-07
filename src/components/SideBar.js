@@ -3,9 +3,9 @@ function SideBar() {
     <main>
       <div class="sidebar">
         <nav class="mb">
-          <h2>VendUp</h2>
+          <h2 class="text-ligth">VendUp</h2>
         </nav>
-        <hr />
+        <hr/>
         <div class="mt">
           <a href="#">
             <div class="butsidebar">
@@ -72,7 +72,7 @@ function SideBar() {
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg>
               </i>
-              <p>Login</p>
+              <p>Logout</p>
             </div>
           </a>
         </div>

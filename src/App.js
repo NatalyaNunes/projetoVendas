@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<Login/>}/>
           <Route path="/home" element={<Table/>}/>
           <Route path="/cadastro" element={<Cadastro/>}/>
+          <Route path="/sidebar" element={<SideBar/>}/>
         </Routes>
       </div>
     </Router>
