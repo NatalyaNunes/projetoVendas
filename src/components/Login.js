@@ -19,11 +19,11 @@ const Login = ({ login, error }) => {
           <span class="text-opaco">VendUp</span>
         </div>
          <div class="right">
-          <div class="forms">
+          <div class="forms text-blue">
               <h2>Login</h2>
               {error && <p>{error}</p>}
               <form onSubmit={onSubmit}>
-                <div class="cardinput mt">
+                <div class="text-blue cardinput mt">
                   <label for="email">Email</label>
                     <input
                       type="email"

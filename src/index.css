@@ -47,6 +47,7 @@ body, html {
   background-color: var(--pj-ligth);
   padding: 2rem;
   border-radius: 8px;
+  color: var(--pj-blue);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px; 
@@ -62,7 +63,6 @@ body, html {
 .cardinput label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #333;
 }
 
 .cardinput input {
@@ -71,6 +71,10 @@ body, html {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 0.25rem; /* Para dar um pequeno espaço entre o input e o label */
+}
+
+.cardinput input:hover{
+  border: 1px solid var(--pj-blue);
 }
 
 /*Style buttons*/
@@ -100,6 +104,10 @@ body, html {
 
 .text-ligth{
   color: var(--pj-ligth);
+}
+
+.text-blue{
+  color: var(--pj-blue) !important;
 }
 
 .text-opaco{
