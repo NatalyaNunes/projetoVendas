@@ -1,6 +1,5 @@
 import logo from "./logo.svg";
 import "./App.css";
-import SideBar from "./components/SideBar";
 import Cadastro from "./components/forms/Cadastro";
 import Table from "./components/Table";
 import Login from "./components/Login";
@@ -16,6 +15,7 @@ function App() {
           <Route path="/" element={<Login/>}/>
           <Route path="/home" element={<PrivateRoute><Home/></PrivateRoute>}/>
           <Route path="/cadastro" element={<PrivateRoute><Cadastro/></PrivateRoute>}/>
+          <Route path="/cadastro/:id" element={<PrivateRoute><Cadastro/></PrivateRoute>}/>
           <Route path="/vendas" element={<PrivateRoute><Table/></PrivateRoute>}/>
         </Routes>
       </div>

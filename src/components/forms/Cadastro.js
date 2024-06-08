@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addSale } from "../../redux/user/actions";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addSale, updSale } from "../../redux/user/actions";
+import { useNavigate, useParams } from "react-router-dom";
 import Layout from "../Layout";
 import Table from "../Table";
 import { getNextId } from "../../redux/user/saleReducer";
@@ -9,38 +9,55 @@ import { getNextId } from "../../redux/user/saleReducer";
 function Cadastro() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { id } = useParams();
+  const sales = useSelector((state) => state.sale.sales);
+  const saleToEdit = sales.find((sale) => sale.id === Number(id));
 
   const [cliente, setCliente] = useState("");
   const [produto, setProduto] = useState("");
   const [valor, setValor] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
+
+  useEffect(() => {
+    if (saleToEdit) {
+      setCliente(saleToEdit.cliente);
+      setProduto(saleToEdit.produto);
+      setValor(saleToEdit.valor);
+      setIsEditing(true);
+    }
+  }, [saleToEdit]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if(!cliente || !produto || !valor){
-        alert("Preencha todos os campos!");
-        return;
+    if (!cliente || !produto || !valor) {
+      alert("Preencha todos os campos!");
+      return;
     }
 
     const novaVenda = {
-      id: getNextId(),
+      id: isEditing ? saleToEdit.id : getNextId(),
       cliente,
       produto,
       valor,
     };
 
-    dispatch(addSale(novaVenda));
+    if (isEditing) {
+      dispatch(updSale(novaVenda));
+    } else {
+      dispatch(addSale(novaVenda));
+    }
 
     setCliente("");
     setProduto("");
     setValor("");
-    navigate("/cadastro");
+    navigate("/vendas");
   };
 
   return (
     <Layout>
       <main className="forms">
         <div>
-          <h3 className="mb">Cadastrar venda</h3>
+          <h3 className="mb">{isEditing ? "Editar" : "Cadastrar"} venda</h3>
         </div>
         <hr />
         <form onSubmit={handleSubmit}>
@@ -76,7 +93,7 @@ function Cadastro() {
           </div>
           <div className="cardinput mt">
             <button type="submit" className="but">
-              Cadastrar
+              {isEditing ? "Salvar Alterações" : "Cadastrar"}
             </button>
           </div>
         </form>

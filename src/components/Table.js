@@ -13,6 +13,10 @@ const Table = () => {
     navigate("/cadastro");
   };
 
+  const handleEdit = (id) => {
+    navigate(`/cadastro/${id}`);
+  }
+
   const handleRemove = (id) => {
     dispatch(removeSale(id));
   };
@@ -46,7 +50,7 @@ const Table = () => {
                   <td>{sale.produto}</td>
                   <td>{sale.valor}</td>
                   <td>
-                    <a href="#">
+                    <a onClick={() => handleEdit(sale.id)}>
                       <i>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

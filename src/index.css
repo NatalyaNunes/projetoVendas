@@ -59,6 +59,7 @@ a {
 
 .forms {
   background-color: var(--pj-ligth);
+  color: var(--pj-blue)!important;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
