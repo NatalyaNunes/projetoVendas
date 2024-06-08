@@ -39,9 +39,9 @@ const Table = () => {
 
           <tbody>
             {sales &&
-              sales.map((sale, index) => (
-                <tr key={sale.id || index}>
-                  <td>{sale.id || index + 1}</td>
+              sales.map((sale) => (
+                <tr key={sale.id}>
+                  <td>{sale.id}</td>
                   <td>{sale.cliente}</td>
                   <td>{sale.produto}</td>
                   <td>{sale.valor}</td>

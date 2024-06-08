@@ -4,6 +4,7 @@ import { addSale } from "../../redux/user/actions";
 import { useNavigate } from "react-router-dom";
 import Layout from "../Layout";
 import Table from "../Table";
+import { getNextId } from "../../redux/user/saleReducer";
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ function Cadastro() {
     }
 
     const novaVenda = {
-      id: Date.now(),
+      id: getNextId(),
       cliente,
       produto,
       valor,

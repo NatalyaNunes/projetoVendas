@@ -21,4 +21,10 @@ const saleReducer = (state = initialState, action) => {
   }
 };
 
+let currentId = 1;
+
+export const getNextId = () => {
+  return currentId++;
+};
+
 export default saleReducer;
