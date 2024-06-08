@@ -1,13 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import Layout from "./Layout";
+import { removeSale } from "../redux/user/actions";
 
 const Table = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const sales = useSelector((state) => state.sale.sale);
 
   const handleNewVendaClick = () => {
     navigate("/cadastro");
   };
+
+  const handleRemove = (id) => {
+    dispatch(removeSale(id));
+  };
+
   return (
     <Layout>
       <main class="crud">
@@ -29,11 +38,12 @@ const Table = () => {
           </thead>
 
           <tbody>
-            <tr>
-              <td>01</td>
-              <td>Natálya </td>
-              <td>Pizza</td>
-              <td>49,99</td>
+            {sales && sales.map((sale,index) => (
+              <tr key={sale.id || index}>
+              <td>{sale.id || index + 1}</td>
+              <td>{sale.cliente}</td>
+              <td>{sale.produto}</td>
+              <td>{sale.valor}</td>
               <td>
                 <a href="#">
                   <i>
@@ -56,7 +66,7 @@ const Table = () => {
                 </a>
               </td>
               <td>
-                <a href="#">
+                <a onClick={() => handleRemove(sale.id)}>
                   <i class="lixeira">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -79,6 +89,8 @@ const Table = () => {
                 </a>
               </td>
             </tr>
+            ))}
+            
 
             <tr>
               <td>02</td>

@@ -3,6 +3,8 @@
 export const LOGIN_REQUEST = "LOGIN_REQUEST";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
+export const ADD_SALE = "ADD_SALE";
+export const REMOVE_SALE = "REMOVE_SALE"; 
 
 export const loginRequest = (credentials) => ({
   type: LOGIN_REQUEST,
@@ -42,3 +44,13 @@ export const login = (credentials) => (dispatch, getState) => {
     dispatch(loginFailure("Email ou senha incorretos."));
   }
 };
+
+export const addSale = (sale) =>({
+  type: ADD_SALE,
+  payload: sale,
+});
+
+export const removeSale = (saleId) => ({
+  type: REMOVE_SALE,
+  payload: saleId,
+});
