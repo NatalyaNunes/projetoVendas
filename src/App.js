@@ -5,8 +5,8 @@ import Cadastro from "./components/forms/Cadastro";
 import Table from "./components/Table";
 import Login from "./components/Login";
 import Home from "./components/Home";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -14,10 +14,9 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Login/>}/>
-          <Route path="/home" element={<Home/>}/>
-          <Route path="/cadastro" element={<Cadastro/>}/>
-          <Route path="/sidebar" element={<SideBar/>}/>
-          <Route path="/vendas" element={<Table/>}/>
+          <Route path="/home" element={ <PrivateRoute><Home/></PrivateRoute>}/>
+          <Route path="/cadastro" element={<PrivateRoute><Cadastro/></PrivateRoute>}/>
+          <Route path="/vendas" element={<PrivateRoute><Table/></PrivateRoute>}/>
         </Routes>
       </div>
     </Router>
