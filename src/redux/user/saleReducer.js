@@ -1,5 +1,3 @@
-// reducers/saleReducer.js
-
 import { ADD_SALE, REMOVE_SALE } from "./actions";
 
 const initialState = {
