@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from "./actions";
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from "./actions";
 
 const initialState = {
   CurrentUser: null,
@@ -33,6 +33,12 @@ const userReducer = (state = initialState, action) => {
         isAuthenticated: false,
         error: action.payload,
       };
+    case LOGOUT:
+    return{
+      ...state,
+      isAuthenticated: false,
+      user: null,
+    };
     default:
       return state;
   }

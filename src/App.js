@@ -14,7 +14,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Login/>}/>
-          <Route path="/home" element={ <PrivateRoute><Home/></PrivateRoute>}/>
+          <Route path="/home" element={<PrivateRoute><Home/></PrivateRoute>}/>
           <Route path="/cadastro" element={<PrivateRoute><Cadastro/></PrivateRoute>}/>
           <Route path="/vendas" element={<PrivateRoute><Table/></PrivateRoute>}/>
         </Routes>

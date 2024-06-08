@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../redux/user/actions';
 
 const SideBar = ({ isOpen }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handlerVendasClick = () => {
     navigate("/vendas");
@@ -12,6 +15,11 @@ const SideBar = ({ isOpen }) => {
     navigate("/home");
   };
 
+  const handleLogout = (event) => {
+    event.preventDefault();
+    dispatch(logout());
+    navigate('/');
+  }
 
   return (
     <main>
@@ -67,7 +75,7 @@ const SideBar = ({ isOpen }) => {
             </div>
           </a>
 
-          <a>
+          <a onClick={handleLogout}>
             <div className="butsidebar">
               <i>
                 <svg
