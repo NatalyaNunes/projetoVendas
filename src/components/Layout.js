@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
         </i>
       </div>
       <SideBar isOpen={sidebarOpen} />
-      <div class="main-content mt">{children}</div>
+      <div class="main-content">{children}</div>
     </div>
   );
 };

@@ -34,7 +34,7 @@ const Login = ({ login, isAuthenticated, error }) => {
 
   return (
     <main class="home">
-       <div class="box">
+       <div class="box shadow">
       <form onSubmit={onSubmit}>
         <h2>Login</h2>
         <div class="inputbox">

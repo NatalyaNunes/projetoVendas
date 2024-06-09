@@ -15,6 +15,7 @@
 body,
 html {
   height: 100%;
+  width: 100%;
   font-family: Arial, sans-serif;
 }
 
@@ -35,6 +36,11 @@ a {
   justify-content: center;
   align-items: center;
 }
+/*Página cadastro background*/
+
+.homeCadastro {
+  background-image: url(./icons/img/backVendas.jpg)!important;
+}
 
 /*página main*/
 
@@ -42,27 +48,16 @@ a {
   margin: 1rem;
 }
 
-/*style forms*/
+/*Sombra*/
 
-.forms {
-  background-color: var(--pj-ligth);
-  color: var(--pj-blue)!important;
-  padding: 2rem;
+.shadow {
   border-radius: 8px;
   box-shadow: 10px 10px 20px #444444b6,
-            -10px -10px 20px #ffffff
+            -10px -10px 20px #ffffff83
   ;
-  width: 100%;
-  max-width: 400px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-left: auto; 
-  margin-right: auto; 
 }
 
-/*style inputs*/
+/*style card inputs e labels*/
 
 .box{
   width: 400px;
@@ -74,10 +69,10 @@ a {
   border-radius: 20px;
   backdrop-filter: blur(15px);
   background: transparent;
+  color: var(--pj-ligth)!important;
 }
 h2{
   font-size: 2em;
-  color: #fff;
   text-align: center;
 }
 
@@ -92,7 +87,6 @@ position: absolute ;
 top: 50%;
 left: 5px;
 transform: translateY(-50%);
-color: #fff;
 font-size: 1em ;
 pointer-events: none;
 transition: 0.5s;
@@ -114,12 +108,10 @@ border: none;
 outline: none;
 font-size: 1em;
 padding: 0 35px 0 5px;
-color: #000;
 }
 .inputbox i{
 position: absolute;
 right: 8px;
-color: #fff;
 font-size: 1.2em;
 top: 20px;
 }
@@ -292,7 +284,7 @@ table tr:hover td {
 
   .main-content {
     margin-left: 0;
-    padding: 20px;
+    width: 100%;
     transition: margin-left 0.3s ease;
   }
 }
@@ -302,12 +294,8 @@ table tr:hover td {
   .menu-toggle {
     display: none;
   }
-}
-
-@media (max-width: 768px) {
-  .forms {
-    margin-left: 1rem!important; 
-   margin-right: 1rem!important;
-    max-width: calc(100% - 2rem)!important;
+  .main-content {
+    width: 100%;
   }
 }
+
