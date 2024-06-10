@@ -4,6 +4,7 @@ import { addSale, updSale } from "../../redux/user/actions";
 import { useNavigate, useParams } from "react-router-dom";
 import Layout from "../Layout";
 import { getNextId } from "../../redux/user/saleReducer";
+import { toast } from "react-toastify";
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ function Cadastro() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!cliente || !produto || !valor) {
-      alert("Preencha todos os campos!");
+      toast.error("Preencha todos os campos!")
       return;
     }
 
@@ -49,8 +50,10 @@ function Cadastro() {
     //Definir a ação requisitada para executar
     if (isEditing) {
       dispatch(updSale(novaVenda));
+      toast.success("Venda atualizada!")
     } else {
       dispatch(addSale(novaVenda));
+      toast.success("Venda registrada!")
     }
     //limpar os campos e redirecionar
     setCliente("");

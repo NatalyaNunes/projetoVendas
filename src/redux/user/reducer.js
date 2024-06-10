@@ -6,9 +6,9 @@ const initialState = {
   error: "",
   users: [
     {
-      email: "user@gmail.com",
-      senha: "user123",
-      nome: "Natálya",
+      email: "vendUp@gmail.com",
+      senha: "vendUp2024",
+      nome: "VendUp",
     },
   ],
 };

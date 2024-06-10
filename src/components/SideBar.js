@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/user/actions";
+import { toast } from "react-toastify";
 
 const SideBar = ({ isOpen }) => {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ const SideBar = ({ isOpen }) => {
   const handleLogout = (event) => {
     event.preventDefault();
     dispatch(logout());
+    toast.success("Você foi deslogado com sucesso!");
     navigate("/");
   };
 

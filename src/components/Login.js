@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { login } from "../redux/user/actions";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = ({ login, isAuthenticated, error }) => {
   const [email, setEmail] = useState("");
@@ -16,6 +17,7 @@ const Login = ({ login, isAuthenticated, error }) => {
   //redirecionar após logar
   useEffect(() => {
     if (isAuthenticated) {
+      toast.success("Você está logado!");
       navigate("/home");
     }
   }, [isAuthenticated, navigate]);
@@ -23,6 +25,7 @@ const Login = ({ login, isAuthenticated, error }) => {
   //limpar os campo ao digitar errado ou não preencher os campos
   useEffect(() => {
     if (error) {
+      toast.error(error);
       setEmail("");
       setSenha("");
     }
@@ -86,7 +89,6 @@ const Login = ({ login, isAuthenticated, error }) => {
           <button class="but mt" type="submit">
             Login
           </button>
-          {error && <p class="mt text-red">{error}</p>}
         </form>
       </div>
     </main>

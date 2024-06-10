@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Layout from "./Layout";
 import { removeSale } from "../redux/user/actions";
+import { toast } from "react-toastify";
 
 const Table = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const Table = () => {
 
     //Passar id para remover
     const handleRemove = (id) => {
+      toast.success("Venda deletada!")
       dispatch(removeSale(id));
     };
 
