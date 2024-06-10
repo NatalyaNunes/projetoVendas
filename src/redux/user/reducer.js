@@ -38,6 +38,7 @@ const userReducer = (state = initialState, action) => {
       ...state,
       isAuthenticated: false,
       user: null,
+      CurrentUser: null,
     };
     default:
       return state;

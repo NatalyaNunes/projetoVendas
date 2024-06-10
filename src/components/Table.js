@@ -10,19 +10,20 @@ const Table = () => {
   const sales = useSelector((state) => state.sale.sales);
   const total = useSelector((state) => state.sale.total);
 
-// Ações da página
+  // Ações da página
+    const handleNewVendaClick = () => {
+      navigate("/cadastro");
+    };
 
-  const handleNewVendaClick = () => {
-    navigate("/cadastro");
-  };
+    //Passar id pra url pra editar
+    const handleEdit = (id) => {
+      navigate(`/cadastro/${id}`);
+    };
 
-  const handleEdit = (id) => {
-    navigate(`/cadastro/${id}`);
-  }
-
-  const handleRemove = (id) => {
-    dispatch(removeSale(id));
-  };
+    //Passar id para remover
+    const handleRemove = (id) => {
+      dispatch(removeSale(id));
+    };
 
   return (
     <Layout>
@@ -98,10 +99,15 @@ const Table = () => {
                   </td>
                 </tr>
               ))}
-              <tr>
+            <tr>
               <td colSpan="1">Total</td>
-              <td colSpan="5">{total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
-</tr>
+              <td colSpan="5">
+                {total.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </td>
+            </tr>
           </tbody>
         </table>
       </main>

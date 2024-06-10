@@ -26,6 +26,7 @@ function Cadastro() {
     }
   }, [saleToEdit]);
 
+  //Submeter o valor caso esteja campos preenchidos, do contrário exibir alerta
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!cliente || !produto || !valor) {
@@ -33,21 +34,25 @@ function Cadastro() {
       return;
     }
 
-    const valorNumerico = parseFloat(valor.replace('R$', '').replace(/\./g, '').replace(',', '.')) / 100;
+    //Ajustar a mask do input valor
+    const valorNumerico =
+      parseFloat(valor.replace("R$", "").replace(/\./g, "").replace(",", ".")) /
+      100;
 
     const novaVenda = {
       id: isEditing ? saleToEdit.id : getNextId(),
       cliente,
       produto,
-      valor: `R$ ${valorNumerico.toFixed(2).replace('.', ',')}`,
+      valor: `R$ ${valorNumerico.toFixed(2).replace(".", ",")}`,
     };
 
+    //Definir a ação requisitada para executar
     if (isEditing) {
       dispatch(updSale(novaVenda));
     } else {
       dispatch(addSale(novaVenda));
     }
-
+    //limpar os campos e redirecionar
     setCliente("");
     setProduto("");
     setValor("");
@@ -55,10 +60,10 @@ function Cadastro() {
   };
 
   const formatCurrency = (value) => {
-    if (!value) return '';
-    const parts = value.replace(/[^\d]/g, '').split('');
-    const integerPart = parts.slice(0, -2).join('') || '0';
-    const decimalPart = parts.slice(-2).join('').padStart(2, '0');
+    if (!value) return "";
+    const parts = value.replace(/[^\d]/g, "").split("");
+    const integerPart = parts.slice(0, -2).join("") || "0";
+    const decimalPart = parts.slice(-2).join("").padStart(2, "0");
     return `R$ ${parseInt(integerPart, 10).toLocaleString()}.${decimalPart}`;
   };
 

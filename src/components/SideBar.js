@@ -1,12 +1,13 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { logout } from '../redux/user/actions';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/user/actions";
 
 const SideBar = ({ isOpen }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  //Direcionamento para rotas ou ações
   const handlerVendasClick = () => {
     navigate("/vendas");
   };
@@ -18,12 +19,12 @@ const SideBar = ({ isOpen }) => {
   const handleLogout = (event) => {
     event.preventDefault();
     dispatch(logout());
-    navigate('/');
-  }
+    navigate("/");
+  };
 
   return (
     <main>
-      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <nav className="mb">
           <h2 className="text-ligth">VendUp</h2>
         </nav>

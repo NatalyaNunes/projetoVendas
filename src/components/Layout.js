@@ -1,3 +1,5 @@
+//Definir Layout com barra de navegação lateral, o sidebar
+
 import React, { useState } from "react";
 import SideBar from "./SideBar";
 
@@ -9,7 +11,7 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div style={{ display: "flex"}}>
+    <div style={{ display: "flex" }}>
       <div
         class={`menu-toggle ${sidebarOpen ? "open" : "closed"}`}
         onClick={toggleSidebar}
