@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import Layout from "./Layout";
-import { removeSale } from "../redux/user/actions";
+import Layout from "../layout/Layout";
+import { removeSale } from "../../redux/user/actions";
 import { toast } from "react-toastify";
 
 const Table = () => {

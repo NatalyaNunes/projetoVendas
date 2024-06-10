@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addSale, updSale } from "../../redux/user/actions";
 import { useNavigate, useParams } from "react-router-dom";
-import Layout from "../Layout";
+import Layout from "../layout/Layout";
 import { getNextId } from "../../redux/user/saleReducer";
 import { toast } from "react-toastify";
 

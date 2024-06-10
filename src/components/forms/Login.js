@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { login } from "../redux/user/actions";
+import { login } from "../../redux/user/actions";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 

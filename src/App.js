@@ -1,9 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Cadastro from "./components/forms/Cadastro";
-import Table from "./components/Table";
-import Login from "./components/Login";
-import Home from "./components/Home";
+import Table from "./components/pages/Table";
+import Login from "./components/forms/Login";
+import Home from "./components/pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import { ToastContainer, toast } from "react-toastify";

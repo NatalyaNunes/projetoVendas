@@ -45,6 +45,8 @@ color: #001527!important;
   background-image: url(./icons/img/backVendas.jpg) !important;
 }
 
+/*Página home style*/
+
 .homePag {
   display: flex;
   flex-direction: column;
@@ -57,13 +59,9 @@ color: #001527!important;
   width: 100%;
   text-align: center;
   padding: 20px;
-  background-color: #f0f0f0;
   margin-bottom: 10px;
 }
 
-.sales, .social-media {
-  background-color: #e0e0e0;
-}
 
 /* Card das redes sociais */
 .wrapper {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Layout from "./Layout";
+import Layout from "../layout/Layout";
 
 const Home = () => {
   // Resgatar total vendido
