@@ -4,7 +4,8 @@ const initialState = {
   CurrentUser: null,
   isAuthenticated: false,
   error: "",
-  users: [ //Criação de usuário padrão
+  users: [
+    //Criação de usuário padrão
     {
       email: "vendUp@gmail.com",
       senha: "vendUp2024",
@@ -35,12 +36,12 @@ const userReducer = (state = initialState, action) => {
         error: action.payload,
       };
     case LOGOUT:
-    return{
-      ...state,
-      isAuthenticated: false,
-      user: null,
-      CurrentUser: null,
-    };
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: null,
+        CurrentUser: null,
+      };
     default:
       return state;
   }

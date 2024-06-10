@@ -7,19 +7,47 @@ import Home from "./components/pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <ToastContainer/>
+        <ToastContainer />
         <Routes>
-          <Route path="/" element={<Login/>}/>
-          <Route path="/home" element={<PrivateRoute><Home/></PrivateRoute>}/>
-          <Route path="/cadastro" element={<PrivateRoute><Cadastro/></PrivateRoute>}/>
-          <Route path="/cadastro/:id" element={<PrivateRoute><Cadastro/></PrivateRoute>}/>
-          <Route path="/vendas" element={<PrivateRoute><Table/></PrivateRoute>}/>
+          <Route path="/" element={<Login />} />
+          <Route
+            path="/home"
+            element={
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/cadastro"
+            element={
+              <PrivateRoute>
+                <Cadastro />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/cadastro/:id"
+            element={
+              <PrivateRoute>
+                <Cadastro />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/vendas"
+            element={
+              <PrivateRoute>
+                <Table />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </div>
     </Router>

@@ -92,14 +92,21 @@ const Login = ({ login, isAuthenticated, error }) => {
               <label htmlFor="remember">Salvar Login</label>
             </div>
             <div className="forgot-password">
-              <a className="aLogin" href="#">Esqueceu a senha?</a>
+              <a className="aLogin" href="#">
+                Esqueceu a senha?
+              </a>
             </div>
           </div>
           <button className="but mt mb" type="submit">
             Login
           </button>
           <div className="options">
-            <span>Novo no VendUp? <a className="aLogin" href="#">Crie sua conta aqui!</a></span>
+            <span>
+              Novo no VendUp?{" "}
+              <a className="aLogin" href="#">
+                Crie sua conta aqui!
+              </a>
+            </span>
           </div>
         </form>
       </div>

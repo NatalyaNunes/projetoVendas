@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Layout from "../layout/Layout";
 import ProgressBar from "./barradeProgresso/ProgressoBarra";
@@ -16,11 +16,11 @@ const Home = () => {
 
   //Chuva de confettes ao bater a meta
   useEffect(() => {
-    if(total >= meta){
+    if (total >= meta) {
       confetti({
-        particleCount:200,
-        spread:70,
-        origin: {y: 0.6},
+        particleCount: 200,
+        spread: 70,
+        origin: { y: 0.6 },
       });
     }
   }, [total]);
@@ -42,9 +42,10 @@ const Home = () => {
             {total.toLocaleString("pt-BR", {
               style: "currency",
               currency: "BRL",
-            })} á 1.000,00
+            })}{" "}
+            á 1.000,00
           </p>
-        <ProgressBar value={total} max={meta} />
+          <ProgressBar value={total} max={meta} />
         </div>
         <div className="social-media">
           <h2>Redes Sociais</h2>

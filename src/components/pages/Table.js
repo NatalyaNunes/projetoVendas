@@ -12,20 +12,20 @@ const Table = () => {
   const total = useSelector((state) => state.sale.total);
 
   // Ações da página
-    const handleNewVendaClick = () => {
-      navigate("/cadastro");
-    };
+  const handleNewVendaClick = () => {
+    navigate("/cadastro");
+  };
 
-    //Passar id pra url pra editar
-    const handleEdit = (id) => {
-      navigate(`/cadastro/${id}`);
-    };
+  //Passar id pra url pra editar
+  const handleEdit = (id) => {
+    navigate(`/cadastro/${id}`);
+  };
 
-    //Passar id para remover
-    const handleRemove = (id) => {
-      toast.success("Venda deletada!")
-      dispatch(removeSale(id));
-    };
+  //Passar id para remover
+  const handleRemove = (id) => {
+    toast.success("Venda deletada!");
+    dispatch(removeSale(id));
+  };
 
   return (
     <Layout>

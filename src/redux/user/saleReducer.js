@@ -8,7 +8,9 @@ const initialState = {
 //Calcular valor total vendido
 const calculateTotal = (sales) => {
   return sales.reduce((total, sale) => {
-    const valor = parseFloat(sale.valor.replace('R$', '').replace(/\./g, '').replace(',', '.'));
+    const valor = parseFloat(
+      sale.valor.replace("R$", "").replace(/\./g, "").replace(",", ".")
+    );
     return total + valor;
   }, 0);
 };
