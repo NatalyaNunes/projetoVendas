@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addSale, updSale } from "../../redux/user/actions";
 import { useNavigate, useParams } from "react-router-dom";
 import Layout from "../Layout";
 import { getNextId } from "../../redux/user/saleReducer";
-import { NumericFormat } from 'react-number-format'; // Correção da importação
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -53,9 +52,18 @@ function Cadastro() {
     navigate("/vendas");
   };
 
-  const handleValorChange = (values) => {
-    const { value } = values;
-    setValor(value);
+  const formatCurrency = (value) => {
+    if (!value) return '';
+    const parts = value.replace(/[^\d]/g, '').split('');
+    const integerPart = parts.slice(0, -2).join('') || '0';
+    const decimalPart = parts.slice(-2).join('').padStart(2, '0');
+    return `R$ ${parseInt(integerPart, 10).toLocaleString()}.${decimalPart}`;
+  };
+
+  const handleValorChange = (event) => {
+    const inputValue = event.target.value;
+    const formattedValue = formatCurrency(inputValue);
+    setValor(formattedValue);
   };
 
   return (
@@ -135,16 +143,11 @@ function Cadastro() {
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                 </svg>
               </i>
-              <NumericFormat
-                thousandSeparator="."
-                decimalSeparator=","
-                prefix="R$ "
+              <input
+                type="text"
+                name="valor"
                 value={valor}
-                onValueChange={handleValorChange}
-                decimalScale={2}
-                fixedDecimalScale={true}
-                allowNegative={false}
-                customInput={inputProps => <input type="text" {...inputProps} />}
+                onChange={handleValorChange}
               />
               <label htmlFor="valor">Valor</label>
             </div>
