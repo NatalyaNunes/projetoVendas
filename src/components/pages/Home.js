@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Layout from "../layout/Layout";
+import ProgressBar from "./barradeProgresso/ProgressoBarra";
 
 const Home = () => {
   // Resgatar total vendido
@@ -8,6 +9,9 @@ const Home = () => {
 
   // Resgatar nome do usuário
   const CurrentUser = useSelector((state) => state.user.CurrentUser);
+
+  //Criar barra de progresso
+  const salesGoal = 1000;
 
   return (
     <Layout>
@@ -20,18 +24,19 @@ const Home = () => {
           </span>
         </div>
         <div className="sales">
-          <h1>Total de Vendas</h1>
+          <h1 class="mb">Total das Vendas</h1>
           <span>VendUp - Elevando suas vendas ao próximo nível!</span>
           <p>
             {total.toLocaleString("pt-BR", {
               style: "currency",
               currency: "BRL",
-            })}
+            })} á 1.000,00
           </p>
+        <ProgressBar value={total} max={salesGoal} />
         </div>
         <div className="social-media">
           <h2>Redes Sociais</h2>
-          <div className="wrapper">
+          <div className="wrapper mt">
             <a href="#" className="icon">
               <i className="fa-instagram">
                 <svg
