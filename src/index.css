@@ -70,6 +70,79 @@ a {
   padding: 20px;
   box-sizing: border-box;
 }
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icon {
+  text-decoration: none;
+  width: 5.625rem;
+  height: 5.625rem;
+  border-radius: 14px;
+  /* background-color: hsla(209 20% 70% / 20%); */ /* For dark theme */
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.icon > i {
+  color: var(--pj-blue);
+  font-size: 1.5rem;
+  transition: all 0.2s;
+}
+
+.icon:hover > i {
+  scale: 1.2;
+  color: var(--pj-ligth);
+}
+
+.icon:before {
+  background: var(--color);
+  content: "";
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  left: -110%;
+  top: 80%;
+  transform: rotate(45deg);
+}
+
+.icon:hover:before {
+  animation: slide 0.7s forwards;
+}
+
+@keyframes slide {
+  50% {
+    left: 10%;
+    top: -40%;
+  }
+
+  100% {
+    left: -15%;
+    top: -15%;
+  }
+}
+
+.icon:has(.fa-instagram) {
+  --color: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+}
+.icon:has(.fa-facebook) {
+  --color: #0077b5;
+}
+.icon:has(.fa-youtube) {
+  --color: #ff0000;
+}
+.icon:has(.fa-x-twitter) {
+  --color: #1da1f2;
+}
 
 /* Sombra */
 .shadow {
@@ -276,8 +349,8 @@ table tr:hover td {
   margin-right: 1rem;
 }
 
-/* Media query para telas menores que 768px */
-@media (max-width: 880px) {
+/* Media query para telas menores que 1200px */
+@media (max-width: 1200px) {
   .sidebar {
     position: fixed;
     width: 200px;
@@ -331,8 +404,8 @@ table tr:hover td {
   }
 }
 
-/* Media query para telas maiores que 768px */
-@media (min-width: 900px) {
+/* Media query para telas maiores que 1200px */
+@media (min-width: 1200px) {
   .menu-toggle {
     display: none;
   }
@@ -354,7 +427,7 @@ table tr:hover td {
   color: var(--pj-blue);
 }
 .welcome {
-  width: 80%;
+  width: 90%;
   text-align: center;
   padding: 20px;
   background-color: #f0f0f0; /* Cor de fundo para destaque */
@@ -362,7 +435,7 @@ table tr:hover td {
 
 .content {
   display: flex;
-  width: 80%;
+  width: 85%;
   justify-content: space-between;
   padding: 20px;
 }
