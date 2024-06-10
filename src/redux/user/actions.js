@@ -6,6 +6,7 @@ export const REMOVE_SALE = "REMOVE_SALE";
 export const UPDATE_SALE = "UPDATE_SALE";
 export const LOGOUT = "LOGOUT";
 
+//Checagem para Login
 export const loginRequest = (credentials) => ({
   type: LOGIN_REQUEST,
   payload: credentials,
@@ -45,10 +46,12 @@ export const login = (credentials) => (dispatch, getState) => {
   }
 };
 
+//Ação Logout
 export const logout = () => ({
   type: LOGOUT,
 });
 
+//Crud vendas
 export const addSale = (sale) => ({
   type: ADD_SALE,
   payload: sale,

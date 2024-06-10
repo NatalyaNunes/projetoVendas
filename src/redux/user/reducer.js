@@ -4,7 +4,7 @@ const initialState = {
   CurrentUser: null,
   isAuthenticated: false,
   error: "",
-  users: [
+  users: [ //Criação de usuário padrão
     {
       email: "vendUp@gmail.com",
       senha: "vendUp2024",
@@ -13,6 +13,7 @@ const initialState = {
   ],
 };
 
+//Ações do usuário
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_REQUEST:

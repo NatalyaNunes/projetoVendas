@@ -5,6 +5,7 @@ const initialState = {
   total: 0,
 };
 
+//Calcular valor total vendido
 const calculateTotal = (sales) => {
   return sales.reduce((total, sale) => {
     const valor = parseFloat(sale.valor.replace('R$', '').replace(/\./g, '').replace(',', '.'));
@@ -12,6 +13,7 @@ const calculateTotal = (sales) => {
   }, 0);
 };
 
+//Crud e Somatário de valor total
 const saleReducer = (state = initialState, action) => {
   let newSales;
 
@@ -44,6 +46,7 @@ const saleReducer = (state = initialState, action) => {
   }
 };
 
+//Contador de id para números comuns sequenciais
 let currentId = 1;
 
 export const getNextId = () => {
