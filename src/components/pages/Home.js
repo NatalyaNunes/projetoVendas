@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect} from "react";
 import { useSelector } from "react-redux";
 import Layout from "../layout/Layout";
 import ProgressBar from "./barradeProgresso/ProgressoBarra";
+import confetti from "canvas-confetti";
 
 const Home = () => {
   // Resgatar total vendido
@@ -11,7 +12,18 @@ const Home = () => {
   const CurrentUser = useSelector((state) => state.user.CurrentUser);
 
   //Criar barra de progresso
-  const salesGoal = 1000;
+  const meta = 1000;
+
+  //Chuva de confettes ao bater a meta
+  useEffect(() => {
+    if(total >= meta){
+      confetti({
+        particleCount:200,
+        spread:70,
+        origin: {y: 0.6},
+      });
+    }
+  }, [total]);
 
   return (
     <Layout>
@@ -32,7 +44,7 @@ const Home = () => {
               currency: "BRL",
             })} á 1.000,00
           </p>
-        <ProgressBar value={total} max={salesGoal} />
+        <ProgressBar value={total} max={meta} />
         </div>
         <div className="social-media">
           <h2>Redes Sociais</h2>
