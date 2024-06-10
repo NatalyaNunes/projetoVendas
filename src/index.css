@@ -17,6 +17,7 @@ html {
   height: 100%;
   width: 100%;
   font-family: Arial, sans-serif;
+  background-color: var(--pj-ligth);
 }
 
 a {
@@ -40,12 +41,6 @@ a {
 
 .homeCadastro {
   background-image: url(./icons/img/backVendas.jpg)!important;
-}
-
-/*página main*/
-
-.crud {
-  margin: 1rem;
 }
 
 /*Sombra*/
@@ -287,6 +282,13 @@ table tr:hover td {
     width: 100%;
     transition: margin-left 0.3s ease;
   }
+  /*página main*/
+
+.crud {
+  padding-top: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+ }
 }
 
 /* Media query para telas maiores que 768px */
@@ -297,5 +299,12 @@ table tr:hover td {
   .main-content {
     width: 100%;
   }
+
+  /*página main*/
+
+.crud {
+  padding-left: 25%;
+  padding-top: 2rem;
+ }
 }
 
