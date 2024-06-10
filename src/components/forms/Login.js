@@ -56,6 +56,7 @@ const Login = ({ login, isAuthenticated, error }) => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder=" "
             />
             <label htmlFor="email">Email</label>
           </div>
@@ -81,6 +82,7 @@ const Login = ({ login, isAuthenticated, error }) => {
               type="password"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
+              placeholder=" "
             />
             <label htmlFor="senha">Senha</label>
           </div>
@@ -96,7 +98,7 @@ const Login = ({ login, isAuthenticated, error }) => {
           <button className="but mt mb" type="submit">
             Login
           </button>
-          <div class="options">
+          <div className="options">
             <span>Novo no VendUp? <a className="aLogin" href="#">Crie sua conta aqui!</a></span>
           </div>
         </form>

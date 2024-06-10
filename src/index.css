@@ -201,7 +201,7 @@ color: #001527!important;
   border-radius: 20px;
   backdrop-filter: blur(15px);
   background: transparent;
-  color: var(--pj-ligth) !important;
+  color: var(--pj-white) !important;
 }
 
 h2 {
@@ -226,8 +226,10 @@ h2 {
   transition: 0.5s;
 }
 
-input:focus ~ label {
+.inputbox input:focus ~ label,
+.inputbox input:not(:placeholder-shown) ~ label {
   top: -5px;
+  font-size: 0.85em;
 }
 
 .inputbox input {

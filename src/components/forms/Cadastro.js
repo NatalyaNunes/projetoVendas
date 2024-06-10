@@ -105,6 +105,7 @@ function Cadastro() {
                 name="cliente"
                 value={cliente}
                 onChange={(event) => setCliente(event.target.value)}
+                placeholder=" "
               />
               <label htmlFor="cliente">Cliente</label>
             </div>
@@ -132,6 +133,7 @@ function Cadastro() {
                 name="produto"
                 value={produto}
                 onChange={(event) => setProduto(event.target.value)}
+                placeholder=" "
               />
               <label htmlFor="produto">Produto</label>
             </div>
@@ -158,6 +160,7 @@ function Cadastro() {
                 name="valor"
                 value={valor}
                 onChange={handleValorChange}
+                placeholder=" "
               />
               <label htmlFor="valor">Valor</label>
             </div>
