@@ -14,7 +14,6 @@ const Login = ({ login, isAuthenticated, error }) => {
     login({ email, senha });
   };
 
-  //redirecionar após logar
   useEffect(() => {
     if (isAuthenticated) {
       toast.success("Você está logado!");
@@ -22,7 +21,6 @@ const Login = ({ login, isAuthenticated, error }) => {
     }
   }, [isAuthenticated, navigate]);
 
-  //limpar os campo ao digitar errado ou não preencher os campos
   useEffect(() => {
     if (error) {
       toast.error(error);
@@ -32,11 +30,11 @@ const Login = ({ login, isAuthenticated, error }) => {
   }, [error]);
 
   return (
-    <main class="home">
-      <div class="box shadow">
+    <main className="home">
+      <div className="box shadow">
         <form onSubmit={onSubmit}>
-          <h2>Login</h2>
-          <div class="inputbox">
+          <h2>Login VendUp</h2>
+          <div className="inputbox">
             <i>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,10 +43,10 @@ const Login = ({ login, isAuthenticated, error }) => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-mail"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-mail"
               >
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
@@ -59,9 +57,9 @@ const Login = ({ login, isAuthenticated, error }) => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
           </div>
-          <div class="inputbox">
+          <div className="inputbox">
             <i>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -70,10 +68,10 @@ const Login = ({ login, isAuthenticated, error }) => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-lock"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-lock"
               >
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
@@ -84,11 +82,23 @@ const Login = ({ login, isAuthenticated, error }) => {
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
             />
-            <label for="senha">Senha</label>
+            <label htmlFor="senha">Senha</label>
           </div>
-          <button class="but mt" type="submit">
+          <div className="options">
+            <div className="remember-me">
+              <input type="checkbox" name="remember" className="" />
+              <label htmlFor="remember">Salvar Login</label>
+            </div>
+            <div className="forgot-password">
+              <a className="aLogin" href="#">Esqueceu a senha?</a>
+            </div>
+          </div>
+          <button className="but mt mb" type="submit">
             Login
           </button>
+          <div class="options">
+            <span>Novo no VendUp? <a className="aLogin" href="#">Crie sua conta aqui!</a></span>
+          </div>
         </form>
       </div>
     </main>

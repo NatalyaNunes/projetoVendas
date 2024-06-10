@@ -1,9 +1,10 @@
 :root {
   --pj-blue: #265073;
   --pj-ciano: #2d9596;
-  --pj-green: #9ad0c2;
+  --pj-black: #000;
   --pj-ligth: #f1f6f8;
   --pj-red: #a00202;
+  --pj-white: #fff;
 }
 
 * {
@@ -22,7 +23,10 @@ html {
 
 a {
   text-decoration: none;
-  color: #000000;
+}
+
+.options a{
+color: #001527!important;
 }
 
 /* Página inicial */
@@ -44,32 +48,24 @@ a {
 .homePag {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: center;
+  width: 100%;
   color: var(--pj-blue);
 }
 
-/*Conteúdo da página home*/
-
-.welcome {
+.welcome, .sales, .social-media {
   width: 100%;
   text-align: center;
   padding: 20px;
-  background-color: #f0f0f0; /* Cor de fundo para destaque */
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
 }
 
-.content {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 20px;
+.sales, .social-media {
+  background-color: #e0e0e0;
 }
 
-.sales, .other-content {
-  width: 48%; /* Ajuste para evitar overflow */
-  background-color: #e0e0e0; 
-  padding: 20px;
-  box-sizing: border-box;
-}
+/* Card das redes sociais */
 .wrapper {
   display: flex;
   justify-content: center;
@@ -82,8 +78,7 @@ a {
   width: 5.625rem;
   height: 5.625rem;
   border-radius: 14px;
-  /* background-color: hsla(209 20% 70% / 20%); */ /* For dark theme */
-  background-color: #fff;
+  background-color: var(--pj-white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,7 +171,7 @@ h2 {
   position: relative;
   margin: 30px 0;
   width: 100%;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--pj-white);
 }
 
 .inputbox label {
@@ -275,7 +270,7 @@ table tr:hover td {
   left: 0;
   width: 200px;
   height: 100%;
-  background-color: #265073;
+  background-color: var(--pj-blue);
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
@@ -349,6 +344,26 @@ table tr:hover td {
   margin-right: 1rem;
 }
 
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.options .remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.options .remember-me input {
+  margin-right: 0.5rem;
+}
+
+.options .forgot-password {
+  margin-left: auto;
+}
+
 /* Media query para telas menores que 1200px */
 @media (max-width: 1200px) {
   .sidebar {
@@ -418,32 +433,4 @@ table tr:hover td {
     padding-left: 25%;
     padding-top: 2rem;
   }
-  /*Conteúdo da página home para telas maiores*/
-  
-.homePag {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  color: var(--pj-blue);
-}
-.welcome {
-  width: 90%;
-  text-align: center;
-  padding: 20px;
-  background-color: #f0f0f0; /* Cor de fundo para destaque */
-}
-
-.content {
-  display: flex;
-  width: 85%;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.sales, .other-content {
-  width: 48%; /* Ajuste para evitar overflow */
-  background-color: #e0e0e0; 
-  padding: 20px;
-  box-sizing: border-box;
-}
 }
