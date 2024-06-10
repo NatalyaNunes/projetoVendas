@@ -8,6 +8,9 @@ const Table = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const sales = useSelector((state) => state.sale.sales);
+  const total = useSelector((state) => state.sale.total);
+
+// Ações da página
 
   const handleNewVendaClick = () => {
     navigate("/cadastro");
@@ -95,6 +98,10 @@ const Table = () => {
                   </td>
                 </tr>
               ))}
+              <tr>
+              <td colSpan="1">Total</td>
+              <td colSpan="5">{total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+</tr>
           </tbody>
         </table>
       </main>

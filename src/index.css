@@ -213,7 +213,7 @@ table tr:hover td {
 /*padrões*/
 
 .bg-ligth {
-  background-color: var(--pj-ligth);
+  background-color: var(--pj-ligth)!important;
 }
 
 .text-ligth {

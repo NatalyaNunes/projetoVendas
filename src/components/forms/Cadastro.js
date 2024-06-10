@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addSale, updSale } from "../../redux/user/actions";
 import { useNavigate, useParams } from "react-router-dom";
@@ -33,11 +33,13 @@ function Cadastro() {
       return;
     }
 
+    const valorNumerico = parseFloat(valor.replace('R$', '').replace(/\./g, '').replace(',', '.')) / 100;
+
     const novaVenda = {
       id: isEditing ? saleToEdit.id : getNextId(),
       cliente,
       produto,
-      valor,
+      valor: `R$ ${valorNumerico.toFixed(2).replace('.', ',')}`,
     };
 
     if (isEditing) {
